@@ -6,7 +6,7 @@ FridgeIO is a mobile app that helps users keep track of their food inventory at 
 ## Prepare the environment
 * For node modules, download from nodejs.org official site
 * To install ionic, open command line, run `npm install -g ionic`; use `sudo` if necessary.
-* Download the project on github into one folder. Note that github repo does not include node module. You should include one folder that looks like node_modules in the project folder.
+* Download the project on github into one folder. Note that github repo does not include node modules. You should include one folder that looks like node_modules in the project folder.
 
 ## Run the ionic project
 * Open a CLI inside the project folder, run `ionic serve` to open the project in browser and go to inspect view to change screen dimensions. 
