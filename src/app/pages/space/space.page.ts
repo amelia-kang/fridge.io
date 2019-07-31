@@ -1,3 +1,14 @@
+/* 
+Space page as the main page in the app contains the item list for users.
+Main functionalities:
+- scrolling
+- add-item button that navigates to add-item page
+- delete an item by sliding the item to the left
+- items are sorted in chronological order
+- item name search function 
+*/
+
+
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
 import { AlertController, IonList, LoadingController, ModalController, ToastController } from '@ionic/angular';
@@ -109,7 +120,7 @@ export class SpacePage implements OnInit {
     this.items = this.loadedGoalList;
   }
 
-  // filter search
+  // filter search function
   filterList(event) {
     this.initializeItems();
     const searchTerm = event.srcElement.value;
@@ -161,13 +172,14 @@ export class SpacePage implements OnInit {
     // now present the alert on top of all other content
     await alert.present();
   }
-
+  
+  // Navigate to add-item page with userId and boxId passed 
   onAddNewItem() {
     console.log('clicked');
     this.router.navigate(['/app/tabs/space/add-item'], { state: { userId: this.userId, boxId: this.boxId } });
   }
 
-
+  // Show gentle user alert
   async showToast(message: string, colour: string, closeButtonText: string) {
     this.toast = await this.toastController.create({
       showCloseButton: true,
