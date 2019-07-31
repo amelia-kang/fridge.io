@@ -1,0 +1,20 @@
+$categories: (
+  dairy: #f5139783,
+  grains: #ffa600,
+  meat: #fd252c,
+  snack: #b12dfdcc,
+  fruit: #ffd54d,
+  vegetable: #39c457,
+  ready-made: #ee2b3f8a,
+  seafood: #2fc8d3,
+  beverage: #171bf3da,
+  nuts: #631717,
+  other: #000000
+);
+
+@each $type, $value in map-remove($categories) {
+  ion-item-sliding[type='#{$type}'] ion-label {
+    border-left: 2px solid $value;
+    padding-left: 10px;
+  }
+}

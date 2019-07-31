@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" [routerLink]="['/app/tabs/space']" routerLinkActive="router-link-active">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-buttons>
+    <ion-title>Add New Item</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form #newItemForm="ngForm" novalidate>
+    <ion-card lines="none">
+
+      <!-- enter item name -->
+      <ion-item>
+        <ion-label position="stacked" color="primary">Name of the item:
+        </ion-label>
+        <ion-input [(ngModel)]="newItem.name" name="name" type="text" #name="ngModel" required>
+        </ion-input>
+      </ion-item>
+
+      <!-- select type -->
+      <ion-item>
+        <ion-label position="stacked" color="primary">Type:
+        </ion-label>
+        <ion-select value="Select One" [(ngModel)]="newItem.type" name="type" type="text" #type="ngModel" required>
+          <ion-select-option>dairy</ion-select-option>
+          <ion-select-option>grains</ion-select-option>
+          <ion-select-option>meat</ion-select-option>
+          <ion-select-option>snack</ion-select-option>
+          <ion-select-option>fruit</ion-select-option>
+          <ion-select-option>vegetable</ion-select-option>
+          <ion-select-option>ready-made</ion-select-option>
+          <ion-select-option>seafood</ion-select-option>
+          <ion-select-option>beverage</ion-select-option>
+          <ion-select-option>other</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked" color="primary">Quantity:
+        </ion-label>
+        <ion-input>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked" color="primary">Will be stored in:
+        </ion-label>
+        <ion-select value="Select One" [(ngModel)]="newItem.storage" name="storage" type="text" #storage="ngModel"
+          required>
+          <ion-select-option>fridge</ion-select-option>
+          <ion-select-option>freezer</ion-select-option>
+          <ion-select-option>pantry</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked" color="primary">Expiry Date:
+        </ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY" max="2021-12-31" [(ngModel)]="newItem.date_expiry" name="date_expiry"
+          #date_expiry="ngModel" required></ion-datetime>
+      </ion-item>
+
+
+
+    </ion-card>
+
+    <div class="ion-padding">
+      <ion-button (click)="onSubmit(newItemForm)" type="submit" size="default" expand="block" class="ion-no-margin">Add
+        to Inventory
+      </ion-button>
+    </div>
+
+
+  </form>
+
+
+</ion-content>
