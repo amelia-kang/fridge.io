@@ -35,6 +35,7 @@ export class SpacePage implements OnInit {
   items: any = [];
   item: ItemOptions = { date_expiry: Date.now(), id: '', name: '', storage: '', type: '' };
   toast: any;
+  segment = 'all';
 
   constructor(
     public actionSheetCtrl: ActionSheetController,
